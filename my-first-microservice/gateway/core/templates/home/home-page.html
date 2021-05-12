@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+
+
+{% block content %}
+    <h1>Home Page</h1>
+    {% for question in questions %}
+    <hr/>
+    <div class="card col-md-7">
+        <div class="card-body">
+            <a href="{% url 'core:question-detail' pk=question.id %}" style="text-decoration: none;">{{question.title}}</a>
+        </div>
+    </div>
+    {% endfor %}
+{% endblock %}

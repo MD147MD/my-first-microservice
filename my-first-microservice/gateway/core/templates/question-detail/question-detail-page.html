@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+
+
+{% block content %}
+    <h1>{{question.title}}</h1>
+    <hr/>
+    <small style="color:gray">Owner : {{question.full_name}}</small>
+    <p>{{question.body}}</p>
+    {% if is_owner_of_question %}
+    <a href="{% url 'question:remove-question' pk=question.id %}" class="btn btn-danger">Remove</a>
+    {% endif %}
+{% endblock %}

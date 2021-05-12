@@ -1,0 +1,15 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-item nav-link active" href="{% url 'core:home' %}">Home</a>
+        {% if is_authenticated %}
+        <a class="nav-item nav-link active" href="{% url 'accounts:logout' %}">Logout</a>
+        <a class="nav-item nav-link active" href="{% url 'question:create-question' %}">Ask Question</a>
+        <a class="nav-item nav-link active" href="">{{current_user.email}}</a>
+        {% else %}
+        <a class="nav-item nav-link active" href="{% url 'accounts:register' %}">Register</a>
+        <a class="nav-item nav-link active" href="{% url 'accounts:login' %}">Login</a>
+        {% endif %}  
+      </div>
+    </div>
+  </nav>

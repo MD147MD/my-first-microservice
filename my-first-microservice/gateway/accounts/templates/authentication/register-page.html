@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+
+
+{% block content %}
+    <h1>Registration Page</h1>
+    <hr/>
+    <form method="post" class="col-md-5">
+        {% csrf_token %}
+        {{form}}
+        <br/>
+        <input type="submit" value="Register" class="btn btn-success">
+    </form>
+{% endblock %}
